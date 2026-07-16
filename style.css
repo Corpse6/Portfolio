@@ -212,7 +212,11 @@ background:#c084fc;
 
 border-radius:50%;
 
-opacity:0.8;
+box-shadow:
+0 0 10px #c084fc,
+0 0 20px #a855f7;
+
+z-index:999;
 
 pointer-events:none;
 
@@ -225,16 +229,13 @@ animation:float 8s infinite ease-in-out;
 
 0%{
 
-transform:
-translate(0,0)
-scale(1);
-
+transform:translateY(0);
 opacity:0;
 
 }
 
 
-25%{
+20%{
 
 opacity:1;
 
@@ -243,25 +244,16 @@ opacity:1;
 
 50%{
 
-transform:
-translate(30px,-80px)
-scale(1.5);
+transform:translateY(-100px) translateX(40px);
 
-}
-
-
-75%{
-
-opacity:0.7;
+opacity:0.8;
 
 }
 
 
 100%{
 
-transform:
-translate(-20px,-160px)
-scale(0.5);
+transform:translateY(-200px) translateX(-30px);
 
 opacity:0;
 
