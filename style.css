@@ -1,64 +1,502 @@
-.particle{
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&display=swap');
 
-position:fixed;
 
-width:6px;
-height:6px;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-background:#c084fc;
 
-border-radius:50%;
+body{
 
-z-index:9999;
+    background:
+    radial-gradient(circle at top,#1a0630,#050008 60%);
 
-box-shadow:
-0 0 10px #c084fc,
-0 0 25px #9333ea;
+    color:white;
 
-pointer-events:none;
+    font-family:'Cinzel',serif;
 
-animation:soulFloat 6s infinite ease-in-out;
+    overflow-x:hidden;
 
 }
+
+
+
+/* HEADER */
+
+header{
+
+    text-align:center;
+
+    padding:40px;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+
+
+header h1{
+
+    font-size:60px;
+
+    color:#d8b4fe;
+
+    text-shadow:
+    0 0 15px purple;
+
+}
+
+
+
+header p{
+
+    font-size:25px;
+
+    color:#c084fc;
+
+}
+
+
+
+
+nav{
+
+    margin-top:30px;
+
+}
+
+
+
+nav a{
+
+    color:white;
+
+    text-decoration:none;
+
+    margin:15px;
+
+    transition:.3s;
+
+}
+
+
+
+nav a:hover{
+
+    color:#c084fc;
+
+    text-shadow:
+    0 0 10px purple;
+
+}
+
+
+
+
+
+/* HERO */
+
+
+.hero{
+
+    height:90vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    position:relative;
+
+}
+
+
+
+.hero-text{
+
+    width:700px;
+
+    text-align:center;
+
+    z-index:2;
+
+}
+
+
+
+.hero h2{
+
+    font-size:45px;
+
+    color:#e9d5ff;
+
+    text-shadow:
+    0 0 20px purple;
+
+}
+
+
+
+.hero p{
+
+    line-height:1.8;
+
+    margin-top:20px;
+
+}
+
+
+
+
+
+/* MAGIC CIRCLE */
+
+
+.magic-circle{
+
+    position:absolute;
+
+    width:350px;
+
+    height:350px;
+
+
+    border-radius:50%;
+
+
+    border:
+
+    3px solid #a855f7;
+
+
+    box-shadow:
+
+    0 0 20px #a855f7,
+
+    inset 0 0 30px purple;
+
+
+    animation:
+
+    rotate 10s linear infinite;
+
+
+}
+
+
+
+.magic-circle::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:35px;
+
+    border-radius:50%;
+
+    border:2px dashed #c084fc;
+
+}
+
+
+
+@keyframes rotate{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+
+
+
+
+
+/* BUTTON */
+
+
+button{
+
+    margin-top:30px;
+
+    padding:15px 40px;
+
+
+    background:
+
+    linear-gradient(45deg,#4c1d95,#9333ea);
+
+
+    border:none;
+
+    color:white;
+
+
+    border-radius:30px;
+
+
+    cursor:pointer;
+
+
+    font-family:inherit;
+
+
+    box-shadow:
+
+    0 0 20px purple;
+
+
+    transition:.3s;
+
+}
+
+
+
+button:hover{
+
+    transform:scale(1.1);
+
+    box-shadow:
+
+    0 0 40px #c084fc;
+
+}
+
+
+
+
+
+/* SECTIONS */
+
+
+section{
+
+    padding:70px 10%;
+
+    text-align:center;
+
+}
+
+
+
+section h2{
+
+    font-size:35px;
+
+    color:#d8b4fe;
+
+    margin-bottom:30px;
+
+}
+
+
+
+
+
+/* CARDS */
+
+
+.card{
+
+
+    background:
+
+    rgba(20,5,35,.85);
+
+
+    padding:30px;
+
+
+    margin:20px;
+
+
+    border-radius:20px;
+
+
+    border:
+
+    1px solid #7e22ce;
+
+
+    box-shadow:
+
+    0 0 20px #4c1d95;
+
+
+    transition:.3s;
+
+
+}
+
+
+
+.card:hover{
+
+    transform:
+
+    translateY(-10px);
+
+
+    box-shadow:
+
+    0 0 40px purple;
+
+}
+
+
+
+
+
+.grid{
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+    repeat(auto-fit,minmax(250px,1fr));
+
+
+}
+
+
+
+
+
+
+
+/* PARTICLE SOULS */
+
+
+.particle{
+
+
+    position:fixed;
+
+
+    width:6px;
+
+    height:6px;
+
+
+    background:#c084fc;
+
+
+    border-radius:50%;
+
+
+    z-index:9999;
+
+
+    pointer-events:none;
+
+
+    box-shadow:
+
+    0 0 10px #c084fc,
+
+    0 0 25px #9333ea;
+
+
+    animation:
+
+    soulFloat 6s infinite ease-in-out;
+
+
+}
+
 
 
 @keyframes soulFloat{
 
+
 0%{
 
-transform:translate(0,0) scale(1);
+    transform:
 
-opacity:0;
+    translate(0,0)
+
+    scale(1);
+
+
+    opacity:0;
 
 }
+
 
 
 20%{
 
-opacity:1;
+    opacity:1;
 
 }
+
 
 
 50%{
 
-transform:
-translate(40px,-100px)
-scale(1.5);
+    transform:
 
-opacity:0.8;
+    translate(40px,-100px)
+
+    scale(1.5);
+
+
+    opacity:.8;
 
 }
+
 
 
 100%{
 
-transform:
-translate(-20px,-220px)
-scale(0.5);
+    transform:
 
-opacity:0;
+    translate(-20px,-220px)
+
+    scale(.5);
+
+
+    opacity:0;
 
 }
+
+
+}
+
+
+
+
+
+
+/* FOOTER */
+
+
+footer{
+
+    text-align:center;
+
+    padding:30px;
+
+    background:#090012;
+
+    color:#c084fc;
 
 }
