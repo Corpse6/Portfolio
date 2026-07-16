@@ -2,13 +2,63 @@
 
 position:fixed;
 
-width:15px;
-height:15px;
+width:6px;
+height:6px;
 
-background:red;
+background:#c084fc;
 
 border-radius:50%;
 
 z-index:9999;
+
+box-shadow:
+0 0 10px #c084fc,
+0 0 25px #9333ea;
+
+pointer-events:none;
+
+animation:soulFloat 6s infinite ease-in-out;
+
+}
+
+
+@keyframes soulFloat{
+
+0%{
+
+transform:translate(0,0) scale(1);
+
+opacity:0;
+
+}
+
+
+20%{
+
+opacity:1;
+
+}
+
+
+50%{
+
+transform:
+translate(40px,-100px)
+scale(1.5);
+
+opacity:0.8;
+
+}
+
+
+100%{
+
+transform:
+translate(-20px,-220px)
+scale(0.5);
+
+opacity:0;
+
+}
 
 }
