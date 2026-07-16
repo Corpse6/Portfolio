@@ -1,3 +1,4 @@
+console.log("Necromancer script awakened");
 function awaken(){
 
 alert(
